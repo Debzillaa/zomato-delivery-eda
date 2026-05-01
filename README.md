@@ -48,7 +48,7 @@ The `figures/` directory contains the following exported charts:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/zomato-delivery-eda.git
+git clone https://github.com/Debzillaa/zomato-delivery-eda.git
 cd zomato-delivery-eda
 ```
 
