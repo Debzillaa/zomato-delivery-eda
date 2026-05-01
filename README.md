@@ -1,15 +1,10 @@
 # 🛵 Zomato Delivery Operations: Exploratory Data Analysis (EDA)
 
-![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
-![Pandas](https://img.shields.io/badge/Pandas-Data_Manipulation-150458.svg)
-![Seaborn](https://img.shields.io/badge/Seaborn-Data_Visualization-4C72B0.svg)
-![Status](https://img.shields.io/badge/Status-Completed-success.svg)
-
 ## 📌 Executive Summary
 
 This project performs an end-to-end Exploratory Data Analysis (EDA) on a real-world Zomato logistics dataset containing over 45,000 delivery records. The objective of this project is to uncover operational bottlenecks and mathematically quantify how factors like weather, traffic density, delivery distance, and driver demographics impact the Estimated Time of Arrival (ETA).
 
-## 🎯 Key Business Insights
+## 🎯 Key Insights
 
 Through data cleaning, feature engineering (Haversine distance calculation), and statistical visualization, the following operational insights were discovered:
 
@@ -25,14 +20,14 @@ This project strictly follows professional Data Science directory standards:
 ```text
 zomato-delivery-eda/
 ├── data/
-│   ├── processed/         # Cleaned and engineered dataset ready for ML
-│   └── raw/               # Original Kaggle CSV (Git-ignored)
-├── figures/               # 6 exported high-resolution PNG visualizations
+│   ├── processed/         # Cleaned and engineered dataset
+│   └── raw/               # Original Kaggle CSV
+├── figures/               # 6 exported  visualizations
 ├── notebooks/
 │   └── 01-eda.ipynb       # Initial exploration, sandbox, and imputation testing
 ├── src/
 │   ├── data_cleaning.py   # Python module for handling nulls & Haversine distance
-│   └── visualisation.py   # Python module to generate standard business charts
+│   └── visualisation.py   # Python module to generate standard charts
 ├── requirements.txt       # Project dependencies
 └── README.md              # Project documentation
 ```
@@ -53,7 +48,7 @@ The `figures/` directory contains the following exported charts:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/zomato-delivery-eda.git
+git clone https://github.com/Debzillaa/zomato-delivery-eda.git
 cd zomato-delivery-eda
 ```
 
