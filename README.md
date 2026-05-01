@@ -6,12 +6,12 @@ This project performs an end-to-end Exploratory Data Analysis (EDA) on a real-wo
 
 ## 🎯 Key Insights
 
-Through data cleaning, feature engineering (Haversine distance calculation), and statistical visualization, the following operational insights were discovered:
+Through data cleaning, feature engineering (Haversine distance calculation), and statistical visualisation, the following operational insights were discovered:
 
-1. **Traffic is the Ultimate Bottleneck:** Deliveries in "Jam" traffic conditions take significantly longer (an average of +15 mins) compared to "Low" traffic conditions.
-2. **Weather Causes ETA Variance:** Adverse weather conditions, specifically Fog and Sandstorms, cause the highest delay variance, indicating a need for dynamic "bad weather" ETA adjustments.
+1. **Traffic is the Ultimate Bottleneck:** Deliveries in "Jam" traffic conditions take significantly longer (a median of 31 mins) compared to "Low" traffic conditions (median of 21 mins).
+2. **Weather Causes ETA Variance:** "Fog" and "Cloudy" conditions cause the highest delays, whereas "Sunny" weather results in the fastest and most predictable ETAs.
 3. **The Physics of Delivery:** There is a direct positive correlation between geographic distance and delivery time. However, massive outliers exist where short distances (<5km) took >40 minutes, pointing to severe restaurant-side preparation delays.
-4. **Fleet Optimization:** Pairing specific vehicle types (e.g., bicycles) with older age demographics across long distances yields the lowest operational efficiency.
+4. **Fleet Optimization (Age & Vehicle Type):** Scooters and electric scooters are the most efficient vehicles across all age groups. Conversely, motorcycles are consistently slower, and bicycles driven by the oldest demographic (46+) yield the lowest operational efficiency.
 
 ## 📂 Project Structure
 
@@ -22,7 +22,7 @@ zomato-delivery-eda/
 ├── data/
 │   ├── processed/         # Cleaned and engineered dataset
 │   └── raw/               # Original Kaggle CSV
-├── figures/               # 6 exported visualizations
+├── figures/               # 6 exported visualisations
 ├── notebooks/
 │   └── 01-eda.ipynb       # Initial exploration, sandbox, and imputation testing
 ├── src/
@@ -32,7 +32,7 @@ zomato-delivery-eda/
 └── README.md              # Project documentation
 ```
 
-## 📊 Visualizations Included
+## 📊 Visualisations Included
 
 The `figures/` directory contains the following exported charts. Here are the most impactful operational insights:
 
@@ -48,7 +48,7 @@ _While distance correlates with time, the extreme outliers (high time, low dista
 
 ### 3. Fleet Optimization: Vehicle Type & Driver Age
 
-_This matrix highlights inefficiencies, such as older demographics using bicycles over long distances._
+_This matrix highlights inefficiencies, such as motorcycles consistently underperforming scooters, and older demographics taking longer on bicycles._
 <img src="figures/06_vehicle_and_age_impact.png" width="800">
 
 _(Note: Additional charts regarding Weather Impact, Baseline ETA Distribution, and Driver Ratings are available in the `figures/` folder)._
