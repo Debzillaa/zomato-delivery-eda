@@ -117,5 +117,5 @@ def create_visualizations(input_path, output_dir):
 
 if __name__ == "__main__":
     input_filepath = '../data/processed/zomato-cleaned.csv'
-    output_directory = 'figures'
+    output_directory = '../figures'
     create_visualizations(input_filepath, output_directory)
