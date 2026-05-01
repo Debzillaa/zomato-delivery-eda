@@ -22,7 +22,7 @@ zomato-delivery-eda/
 ├── data/
 │   ├── processed/         # Cleaned and engineered dataset
 │   └── raw/               # Original Kaggle CSV
-├── figures/               # 6 exported  visualizations
+├── figures/               # 6 exported visualizations
 ├── notebooks/
 │   └── 01-eda.ipynb       # Initial exploration, sandbox, and imputation testing
 ├── src/
@@ -34,14 +34,24 @@ zomato-delivery-eda/
 
 ## 📊 Visualizations Included
 
-The `figures/` directory contains the following exported charts:
+The `figures/` directory contains the following exported charts. Here are the most impactful operational insights:
 
-1. `01_delivery_time_distribution.png`: Baseline ETA distribution KDE.
-2. `02_traffic_impact.png`: Boxplot of traffic severity vs. delivery time.
-3. `03_weather_impact.png`: Delay variances across 6 weather conditions.
-4. `04_driver_rating_impact.png`: How driver ratings correlate with speed.
-5. `05_distance_correlation.png`: Scatter plot proving the Distance vs. Time relationship.
-6. `06_vehicle_and_age_impact.png`: Operational fleet analysis matrix.
+### 1. The Bottleneck: Traffic Density vs. Delivery Time
+
+_Deliveries in "Jam" traffic take significantly longer, creating the largest operational bottleneck._
+<img src="figures/02_traffic_impact.png" width="800">
+
+### 2. The Physics: Distance vs. Delivery Time
+
+_While distance correlates with time, the extreme outliers (high time, low distance) indicate restaurant-side preparation delays._
+<img src="figures/05_distance_correlation.png" width="800">
+
+### 3. Fleet Optimization: Vehicle Type & Driver Age
+
+_This matrix highlights inefficiencies, such as older demographics using bicycles over long distances._
+<img src="figures/06_vehicle_and_age_impact.png" width="800">
+
+_(Note: Additional charts regarding Weather Impact, Baseline ETA Distribution, and Driver Ratings are available in the `figures/` folder)._
 
 ## 🚀 How to Run the Pipeline
 
