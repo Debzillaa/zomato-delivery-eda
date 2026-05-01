@@ -8,10 +8,11 @@ This project performs an end-to-end Exploratory Data Analysis (EDA) on a real-wo
 
 Through data cleaning, feature engineering (Haversine distance calculation), and statistical visualisation, the following operational insights were discovered:
 
-1. **Traffic is the Ultimate Bottleneck:** Deliveries in "Jam" traffic conditions take significantly longer (a median of 31 mins) compared to "Low" traffic conditions (median of 21 mins).
-2. **Weather Causes ETA Variance:** "Fog" and "Cloudy" conditions cause the highest delays, whereas "Sunny" weather results in the fastest and most predictable ETAs.
-3. **The Physics of Delivery:** There is a direct positive correlation between geographic distance and delivery time. However, massive outliers exist where short distances (<5km) took >40 minutes, pointing to severe restaurant-side preparation delays.
-4. **Fleet Optimization (Age & Vehicle Type):** Scooters and electric scooters are the most efficient vehicles across all age groups. Conversely, motorcycles are consistently slower, and bicycles driven by the oldest demographic (46+) yield the lowest operational efficiency.
+1. **Baseline ETA & The "Long Tail":** While the majority of deliveries are completed between 20 and 30 minutes, the distribution is heavily right-skewed, revealing a persistent problem of extreme operational delays (50+ minutes).
+2. **Traffic is the Ultimate Bottleneck:** Deliveries in "Jam" traffic conditions take significantly longer (a median of 31 mins) compared to "Low" traffic conditions (median of 21 mins).
+3. **Weather Causes ETA Variance:** "Fog" and "Cloudy" conditions cause the highest delays, whereas "Sunny" weather results in the fastest and most predictable ETAs.
+4. **The Physics of Delivery:** There is a direct positive correlation between geographic distance and delivery time. However, massive outliers exist where short distances (<5km) took >40 minutes, pointing to severe restaurant-side preparation delays.
+5. **Fleet Optimization (Ratings, Age & Vehicle):** Operational efficiency drops significantly under three conditions: when a driver's rating falls below 3.0, when motorcycles are used instead of scooters, or when the oldest demographic (46+) is assigned to bicycles.
 
 ## 📂 Project Structure
 
@@ -34,24 +35,37 @@ zomato-delivery-eda/
 
 ## 📊 Visualisations Included
 
-The `figures/` directory contains the following exported charts. Here are the most impactful operational insights:
+The `figures/` directory contains the following exported charts detailing the operational insights:
 
-### 1. The Bottleneck: Traffic Density vs. Delivery Time
+### 1. Baseline Delivery Time Distribution
+
+_The overall distribution of delivery times across all 45,000+ orders, establishing the baseline ETA._
+<img src="figures/01_delivery_time_distribution.png" width="800">
+
+### 2. The Bottleneck: Traffic Density vs. Delivery Time
 
 _Deliveries in "Jam" traffic take significantly longer, creating the largest operational bottleneck._
 <img src="figures/02_traffic_impact.png" width="800">
 
-### 2. The Physics: Distance vs. Delivery Time
+### 3. The Environment: Weather Impact
+
+_Foggy and Cloudy conditions result in the highest median delivery times and widest variance._
+<img src="figures/03_weather_impact.png" width="800">
+
+### 4. Driver Performance: Ratings vs. Delivery Time
+
+_There is a stark contrast in delivery speed between the highest and lowest-rated delivery partners._
+<img src="figures/04_driver_rating_impact.png" width="800">
+
+### 5. The Physics: Distance vs. Delivery Time
 
 _While distance correlates with time, the extreme outliers (high time, low distance) indicate restaurant-side preparation delays._
 <img src="figures/05_distance_correlation.png" width="800">
 
-### 3. Fleet Optimization: Vehicle Type & Driver Age
+### 6. Fleet Optimization: Vehicle Type & Driver Age
 
 _This matrix highlights inefficiencies, such as motorcycles consistently underperforming scooters, and older demographics taking longer on bicycles._
 <img src="figures/06_vehicle_and_age_impact.png" width="800">
-
-_(Note: Additional charts regarding Weather Impact, Baseline ETA Distribution, and Driver Ratings are available in the `figures/` folder)._
 
 ## 🚀 How to Run the Pipeline
 
